@@ -1,0 +1,540 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font: normal 16px montserrat;
+	color: #2e323c;
+}
+
+a:link,
+a:visited {
+
+	text-decoration: none;
+	/*opacity: 0.75;*/
+	color: #2e323c;
+}
+
+h1 {
+	font-size: 3em;
+}
+
+h2 {
+	font-size: 2.3em;
+	margin: 40px 0 40px 0;
+	text-transform: uppercase;
+	color: #45415e;
+	text-align: center;
+}
+
+h3 {
+	font-size: 2em;
+	/*text-align: center;*/
+	line-height: 40px;
+}
+
+h4 {
+	font-size: 1.2em;
+	text-align: center
+}
+
+section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 30px 10px;
+}
+
+section:not(.hero):nth-child(even) {
+	background-color: #f5f5f5;
+}
+
+hr {
+	width: 250px;
+	height: 3px;
+	background-color: #45415e;
+	border: 0;
+	margin-bottom: 70px;
+}
+
+/* Hero section styles*/
+
+.hero {
+	position: relative;
+	justify-content: center;
+	text-align: center;
+	min-height: 100vh;
+	color: #fff;
+}
+
+.hero .background-image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	z-index: -1;
+	background-color: #2b4251;
+}
+
+.hero h1 {
+	opacity: 0;
+	animation: 2s slidefade 0.5s forwards;
+}
+
+.hero h1:nth-of-type(2) {
+	opacity: 0;
+	animation: 2s slidefade 1s forwards;
+}
+
+@keyframes slidefade {
+	100% {
+		opacity: 1;
+	}
+}
+
+.hero h1 span {
+	color: #91b3bc;
+}
+
+
+.hero a.btn {
+	opacity: 0;
+	display: inline-block;
+	border-radius: 5px;
+	border: 2px solid #5b7d87;
+	color: #FFFFFF;
+	text-align: center;
+	font-size: 28px;
+	padding: 10px;
+	width: 270px;
+	transition: all 0.5s;
+	cursor: pointer;
+	margin: 20px;
+	animation: 2s slidefade 1.5s forwards;
+}
+
+.hero a.btn span {
+	cursor: pointer;
+	display: inline-block;
+	transition: 0.5s;
+}
+
+.hero a.btn:hover {
+	background-color: #5b7d87;
+}
+
+.hero a.btn:hover span {
+	transform: rotate(90deg) translateX(2px);
+}
+
+@media screen and (max-width: 600px) {
+
+	h1 {
+		font-size: 1.5em;
+	}
+
+	.hero a.btn {
+		font-size: 18px;
+		width: 200px;
+	}
+}
+
+/*Navbar Styles*/
+
+/* Add background color to the top navigation */
+
+.topnav {
+	background-color: #91b3bc;
+	overflow: hidden;
+	z-index: 1;
+	position: -webkit-sticky;
+	/* Safari */
+	position: sticky;
+	top: 0;
+	padding-left: 50px;
+
+}
+
+/* Style the links inside the navigation bar */
+
+.topnav a {
+	float: left;
+	display: block;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 14px 25px;
+	text-decoration: none;
+	font-size: 25px;
+	transition: all 0.5s;
+}
+
+
+/* Change the color of links on hover */
+
+.topnav a:hover {
+	background-color: #ddd;
+	color: black;
+	transition: all 0.5s;
+}
+
+.topnav a:clicked {
+	transition: all 0.5s;
+}
+
+/* Add an active class to highlight the current page */
+
+.active {
+	border-bottom: 5px solid #2b4251;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+
+.topnav .icon {
+	display: none;
+}
+
+
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+
+@media screen and (max-width: 600px) {
+	.topnav a:not(:first-child) {
+		display: none;
+	}
+	.topnav a.icon {
+		float: right;
+		display: block;
+	}
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+
+@media screen and (max-width: 600px) {
+	.topnav.responsive {
+		position: relative;
+		z-index: 1;
+		position: -webkit-sticky;
+		/* Safari */
+		position: sticky;
+		top: 0;
+	}
+	.topnav.responsive a.icon {
+		position: absolute;
+		right: 0;
+		/*top: 0;*/
+		/*z-index: 1;*/
+		/*position: -webkit-sticky;*/
+		/* Safari */
+		/*position: sticky;*/
+	}
+	.topnav.responsive a {
+		float: none;
+		display: block;
+		text-align: left;
+	}
+}
+
+
+
+/*About Styles*/
+
+.about-content-area {
+	display: flex;
+	justify-content: space-around;
+}
+
+
+.about-left,
+.about-right {
+	margin: 40px 70px;
+}
+
+.about-left {
+	display: flex;
+	flex: 3 2 600px;
+	/*background-color: purple;*/
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.about-left p {
+	text-align: center;
+	margin: 40px 50px 0px;
+	font-size: 20px;
+	text-justify: auto;
+}
+
+
+.about-right {
+
+	display: flex;
+	flex-direction: column;
+	flex: 2 1 350px;
+	justify-content: space-around;
+}
+
+.about-right a {
+	margin-left: 15px;
+}
+
+.about-right p {
+	margin-left: 35px;
+}
+
+.about-right-top {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: space-around;
+}
+
+.about-right-top .right-top-item {
+	display: flex;
+	font-size: 1.5em;
+	margin: 10px 0 40px 20px;
+	align-items: center;
+}
+
+
+.about-right-bottom {
+	display: flex;
+	justify-content: space-between;
+	align-content: center;
+}
+
+.about-left img {
+	width: 250px;
+	height: 250px;
+	border-radius: 50%;
+	margin-bottom: 20px;
+	box-shadow: 0px 4px 6px 2px lightgrey;
+}
+
+.cv-icon {
+	height: 60px;
+	width: auto;
+}
+
+
+@media screen and (max-width: 800px) {
+
+	h2 {
+		text-align: center;
+	}
+
+	.about-content-area {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.about-left,
+	.about-right {
+		max-width: 600px;
+		/*margin-top: 100px;*/
+	}
+	.about-right {
+		margin-top: 50px;
+	}
+
+	.about-left p {
+		margin: 40px 0px 0px;
+	}
+
+	section {
+
+		padding: 0px;
+	}
+}
+
+/*Skills Styles*/
+
+.skills-content-area {
+	/*background-color: purple;*/
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+	align-content: center;
+}
+
+.skills-content-area img {
+	max-width: auto;
+	max-height: 100px;
+	margin: 20px;
+	-webkit-filter: grayscale(100%);
+	/* Safari 6.0 - 9.0 */
+	filter: grayscale(100%);
+
+}
+
+.skills-content-area img:hover {
+	animation: 1s colorIn 0s forwards;
+}
+
+@keyframes colorIn {
+	100% {
+		-webkit-filter: grayscale(0%);
+		/* Safari 6.0 - 9.0 */
+		filter: grayscale(0%);
+	}
+
+}
+
+/*Portfolio Styles*/
+
+.portfolio-item {
+	margin: 50px;
+	padding: 10px;
+	display: flex;
+
+	justify-content: space-around;
+}
+
+.portfolio-item:nth-child(odd) {
+	background-color: #f5f5f5;
+	flex-direction: row-reverse;
+}
+
+.portfolio-item-left,
+.portfolio-item-right {
+	flex: 1 1 400px;
+	min-height: 300px;
+	justify-content: center;
+	/*align-content: center;*/
+}
+
+.portfolio-item-right img {
+	max-width: 600px;
+	max-height: 600px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 90%;
+}
+
+
+.portfolio-item-left {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+
+.portfolio-item-left p {
+	margin: 40px 40px;
+	font-size: 20px;
+}
+
+
+.portfolio-item-tools img {
+	width: auto;
+	max-height: 50px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.responsive {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: auto;
+	max-height: 400px;
+}
+
+.portfolio-item-left a.btn {
+	background-color: #91b3bc;
+	color: white;
+	margin: 20px 0px;
+	width: 200px;
+	height: 50px;
+	border: none;
+	box-shadow: 0px 2px 5px 1px darkgrey;
+	border-radius: 5px;
+	text-align: center;
+	font-size: 20px;
+	/*font-weight: 700; */
+	line-height: 48px;
+	transition: all ease-in 0.25s;
+}
+
+.portfolio-item-left a.btn:hover {
+	background-color: #5b7d87;
+	transition: all ease-in 0.25s;
+}
+
+.portfolio-item-left a.btn:active {
+	box-shadow: 0px 0px 0px 0px darkgrey;
+}
+
+
+@media screen and (max-width: 800px) {
+	.portfolio-item {
+		display: flex;
+		flex-flow: column wrap;
+		margin: 0px;
+	}
+
+	.portfolio-item-left,
+	.portfolio-item-right {
+		flex: 1 1 auto;
+		min-height: 250px;
+	}
+
+	.portfolio-item-left {
+		margin-top: 20px;
+		order: 2;
+	}
+	.portfolio-item-right {
+
+		order: 1;
+	}
+
+}
+
+
+/*Footer Styles*/
+
+footer {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	background-color: #2b4251;
+	color: #fff;
+	padding: 20px 0;
+}
+
+footer ul {
+	display: flex;
+}
+
+footer ul li {
+	margin-left: 16px;
+}
+
+footer p {
+	text-transform: uppercase;
+	font-size: 14px;
+	opacity: 0.6;
+	align-self: center;
+
+}
+
+@media (max-width: 1100px) {
+	footer {
+		flex-direction: column;
+	}
+
+	footer p {
+		text-align: center;
+		/*margin-bottom: 20px;*/
+	}
+
+	footer ul li {
+		margin: 0 8px;
+	}
+
+}
