@@ -4,6 +4,7 @@
 /*	box-sizing: border-box;*/
 /*}*/
 
+body, html { overflow-x:hidden; }
 
 html, body, div,
 h1, h2, h3, h4, h5, h6,
@@ -346,7 +347,7 @@ hr {
 	.about-left,
 	.about-right {
 		max-width: 600px;
-		margin: 30px;
+		margin: 20px;
 	}
 	.about-right {
 		margin-top: 50px;
@@ -365,7 +366,6 @@ hr {
 /*Skills Styles*/
 
 .skills-content-area {
-	/*background-color: purple;*/
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: space-around;
@@ -373,9 +373,9 @@ hr {
 }
 
 .skills-content-area img {
-	max-width: auto;
+	max-width: 300px;
 	max-height: 100px;
-	margin: 20px;
+	margin: 15px;
 	-webkit-filter: grayscale(100%);
 	/* Safari 6.0 - 9.0 */
 	filter: grayscale(100%);
@@ -401,7 +401,6 @@ hr {
 	margin: 50px;
 	padding: 10px;
 	display: flex;
-
 	justify-content: space-around;
 }
 
