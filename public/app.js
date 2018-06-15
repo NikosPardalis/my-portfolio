@@ -1,4 +1,4 @@
-function myFunction() {
+function responsive() {
   var x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
     x.className += " responsive";
@@ -7,6 +7,11 @@ function myFunction() {
     x.className = "topnav";
   }
 }
+
+function closeMenu() {
+  var x = document.getElementById("myTopnav"); 
+    x.className = "topnav";
+  }
 
 
 $(document).ready(function() {
@@ -26,9 +31,9 @@ $(document).ready(function() {
       menu = target;
     $target = $(target);
     $('html, body').stop().animate({
-      'scrollTop': $target.offset().top + 2
-    }, 500, 'swing', function() {
-      window.location.hash = target;
+      'scrollTop': $target.offset().top - 70
+    }, 800, 'swing', function() {
+      window.location.hash = target-70;
       $(document).on("scroll", onScroll);
     });
   });
@@ -41,7 +46,7 @@ function onScroll(event) {
   $('.topnav a').each(function() {
     var currLink = $(this);
     var refElement = $(currLink.attr("href"));
-    if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+    if (refElement.position().top-80 <= scrollPos && refElement.position().top-80 + refElement.height() > scrollPos) {
       $('.topnav a').removeClass("active");
       currLink.addClass("active");
     }
